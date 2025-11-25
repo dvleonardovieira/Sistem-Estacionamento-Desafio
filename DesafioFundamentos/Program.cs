@@ -3,18 +3,20 @@
 // Coloca o encoding para UTF8 para exibir acentuação
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-decimal precoInicial = 0;
-decimal precoPorHora = 0;
+decimal precoPorHora = 5.00m;
 
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\n" +
-                  "Digite o preço inicial:");
-precoInicial = Convert.ToDecimal(Console.ReadLine());
+Console.WriteLine("===================================");
+Console.WriteLine("Seja bem vindo ao Sistemas:");
+Console.WriteLine(">>>>>>>>JOE Parking<<<<<<<");
+Console.WriteLine($"Valor: ${precoPorHora} por hora");
+Console.WriteLine("===================================\n");
 
-Console.WriteLine("Agora digite o preço por hora:");
-precoPorHora = Convert.ToDecimal(Console.ReadLine());
+//Fazer uma pause, esperar o usuario interagir
+Console.WriteLine("Pressione ENTER para continuar...");
+Console.ReadLine();
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
-Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
+Estacionamento es = new Estacionamento(precoPorHora);
 
 string opcao = string.Empty;
 bool exibirMenu = true;
@@ -24,8 +26,8 @@ while (exibirMenu)
 {
     Console.Clear();
     Console.WriteLine("Digite a sua opção:");
-    Console.WriteLine("1 - Cadastrar veículo");
-    Console.WriteLine("2 - Remover veículo");
+    Console.WriteLine("1 - Cadastrar veículo (Entrada)");
+    Console.WriteLine("2 - Remover veículo (Saida)");
     Console.WriteLine("3 - Listar veículos");
     Console.WriteLine("4 - Encerrar");
 
